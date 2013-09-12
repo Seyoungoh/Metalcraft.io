@@ -4,13 +4,15 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 # User Bootstrap 3 for Rail 4
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',:github => 'anjlab/bootstrap-rails'
-
+# For Heroku
+gem 'rails_12factor', group: :production
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
