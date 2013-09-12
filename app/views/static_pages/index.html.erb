@@ -1,2 +1,14 @@
-<h1>StaticPages#index</h1>
-<p>Find me in app/views/static_pages/index.html.erb</p>
+<div class="jumbotron">
+	<h1>Welcome</h1>
+	<h4>Test line h4</h4>
+	<%= link_to 'Sign Up', "#modal_signup", class: 'btn btn-large btn-primary', "data-toggle"=>"modal","data-target"=>"#modal_signup" %>
+	<%= link_to 'Sign In', "#modal_login", class: 'btn btn-large btn-success', "data-toggle"=>"modal", "data-target"=>"#modal_login" %>
+	<% if current_user %>
+		<%= link_to 'Logout', logout_path %>
+	<% end %>
+</div>
+
+
+
+<%= render "sessions/new" %>
+<%= render "sessions/signup" %>

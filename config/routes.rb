@@ -1,13 +1,18 @@
 Metalcraft::Application.routes.draw do
-  match "about"   => "static_pages#about",    via: :get
-  match "signin"  => "static_pages#signin",   via: :get
-  match "signup"  => "static_pages#signup",   via: :get
+  resources :users
+  resources :sessions
+  match "about"     => "static_pages#about",    via: :get
+  match "login"     => "sessions#new",          via: :get
+  match "logout"    => "sessions#destroy",      via: :get
+  match "signup"    => "users#new",             via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#index'
+  #root 'static_pages#index'
+  root 'static_pages#land'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

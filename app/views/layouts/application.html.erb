@@ -3,13 +3,15 @@
 <head>
   <title>Metalcraft</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag	"custom" if current_page?("/")%>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
-	<%= render "layouts/navbar" %>
+	<%= render "layouts/navbar" unless current_page?(root_url)%>
 	<%= yield %>
-	<%= render "layouts/footer" %>
+	<%= render "shared/flash_message" %>
+	<%= render "layouts/footer" unless current_page?(root_url) %>
 </div>
 
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>

@@ -6,7 +6,9 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
-
+gem 'sorcery'
+# Use Thin server
+gem 'thin'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 # User Bootstrap 3 for Rail 4
@@ -47,3 +49,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+group :development do
+	gem 'pry-rails'
+	gem 'looksee'
+	gem 'awesome_print'
+	gem 'hirb'
+end
+
