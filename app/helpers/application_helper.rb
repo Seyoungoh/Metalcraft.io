@@ -8,4 +8,9 @@ module ApplicationHelper
 		else "alert #level"
 		end
 	end
+
+	def button_close_modal
+		content_tag 'button', raw('&times;'),'data-dismiss' => 'modal',
+		'aria-hidden' => 'true', style: 'right: 0px;', type: 'button', class: 'close'
+	end
 end

@@ -1,6 +1,7 @@
 Metalcraft::Application.routes.draw do
   resources :users
   resources :sessions
+  match "index"     => "static_pages#index",    via: :get
   match "about"     => "static_pages#about",    via: :get
   match "login"     => "sessions#new",          via: :get
   match "logout"    => "sessions#destroy",      via: :get
@@ -11,7 +12,7 @@ Metalcraft::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   #root 'static_pages#index'
-  root 'static_pages#land'
+  root 'static_pages#index'
 
 
   # Example of regular route:
